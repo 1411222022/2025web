@@ -10,7 +10,7 @@ a little easier
 */
 body {
 	margin: 0 auto;
-	width: 100px;
+	width: 800px;
 	padding: 0;
 	/* background: #6e0427 url('../images/body_bg.gif') repeat-x top; */
 	background-image: linear-gradient(to bottom, #ff9500b0, rgba(255, 0, 0, 0.5));
