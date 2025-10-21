@@ -1,4 +1,3 @@
-/* 🔥 加上背景圖片：整個畫面都會是藍色閃電 */
 body {
   margin: 0;
   padding: 0;
@@ -7,8 +6,6 @@ body {
   min-height: 100vh;
 }
 
-
-/* 容器：用來定位老鷹和翅膀 */
 .hero-container {
   position: relative;
   width: 100%;
@@ -18,17 +15,17 @@ body {
   align-items: center;
 }
 
-/* 翅膀（後面） */
+
 .wings-bg {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 1000px; /* 可調整大小 */
+  width: 1000px;
   z-index: 1;
 }
 
-/* 圓形老鷹（前面） */
+
 .eagle-img {
   position: absolute;
   top: 50%;
@@ -42,57 +39,56 @@ body {
   z-index: 2;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
 }
-/* 標題樣式 */
+
 .hero-title {
   position: absolute;
-  bottom: 40px;              /* 與下方的距離，可調整 */
+  bottom: 40px;
   left: 50%;
   transform: translateX(-50%);
-  background: rgba(0, 0, 0, 1); /* 🔥 黑色方框（半透明） */
-  color: #fff;               /* 白色文字 */
-  padding: 15px 40px;        /* 方框內距，讓文字不會貼邊 */
-  font-size: 36px;           /* 字體大小 */
-  font-weight: bold;         /* 加粗 */
+  background: rgba(0, 0, 0, 1);
+  color: #fff;
+  padding: 15px 40px;
+  font-size: 36px;
+  font-weight: bold;
   text-align: center;
-  z-index: 3;                /* 一定要比圖片高，才會蓋在上面 */
+  z-index: 3;
 }
-/* 下半部灰色背景區塊 */
+
 .bottom-section {
   width: 100%;
-  height: 130vh; /* 或你原本設的高度 */
-  background: url('../img/img_009.jpg') no-repeat center center fixed; /* 🔥 加上 fixed */
+  height: 130vh;
+  background: url('../img/img_009.jpg') no-repeat center center fixed;
   background-size: cover;
 }
 .notice-board {
   position: absolute;
-  top: 78%; /* 🔥 調整這個讓它剛好在標題下方、腳的上方 */
+  top: 78%;
   left: 50%;
   transform: translateX(-50%);
-  width: 1000px; /* 可調整大小 */
+  width: 1000px;
   z-index: 2;
 }
-/* 頁腳樣式 */
+
 .page-footer {
   text-align: center;
-  color: #FFD700; /* 黃色字 */
+  color: #FFD700;
   font-size: 18px;
   padding: 20px 0;
-  background: rgba(0, 0, 0, 0.6); /* 🔥 背後一條黑色透明條（可選） */
-  position: relative; /* 預設是隨內容往下推 */
+  background: rgba(0, 0, 0, 0.6);
+  position: relative;
   bottom: 0;
   width: 100%;
   margin-top: -340px;
 }
-/* 下拉選單定位：靠左＋往下 */
+
 .hero-dropdown {
   position: absolute;
-  top: 83%;       /* 🔥 往下移：50% → 65%（越大越下方） */
-  left: 20%;      /* 🔥 靠左移：50% → 20%（越小越靠左） */
+  top: 83%;
+  left: 20%;
   transform: translateY(-50%);
   z-index: 3;
 }
 
-/* 下拉按鈕樣式（可選） */
 .hero-dropdown .btn {
   background-color: #000;
   color: #ffa200;
@@ -103,18 +99,17 @@ body {
 .hero-dropdown .btn:hover {
   background-color: #333;
 }
-/* 容器：定位在翅膀上方，不旋轉 */
+
 .wing-steps{
   position:absolute;
-  z-index:3;               /* 在翅膀上、不要蓋過圓形頭 */
-  width:260px; height:180px; /* 只是提供定位區域，數值可調 */
+  z-index:3;
+  width:260px; height:180px;
 }
 .wing-steps-left{  top:18%; left:23%; }
 .wing-steps-right{ top:18%; right:23%; }
 
-/* 按鈕基礎樣式：水平 */
 .wing-btn{
-  position:absolute;       /* 讓每顆可單獨位移形成階梯 */
+  position:absolute;
   display:block;
   padding:8px 16px;
   background:rgba(0,0,0,.85);
@@ -126,21 +121,14 @@ body {
   transition:.2s;
 }
 
-/* ← 左翼：越往下越往左（階梯） */
 .wing-steps-left .wing-btn:nth-child(1){ top:180px;   left:160px; }
 .wing-steps-left .wing-btn:nth-child(2){ top:135px;  left:120px;  }
 .wing-steps-left .wing-btn:nth-child(3){ top:90px;  left:80px;  }
 .wing-steps-left .wing-btn:nth-child(4){ top:45px;  left:40px;  }
 .wing-steps-left .wing-btn:nth-child(5){ top:0px;  left:0px;  }
 
-/* → 右翼：越往下越往右（階梯） */
 .wing-steps-right .wing-btn:nth-child(1){ top:180px;   left:0px;   }
 .wing-steps-right .wing-btn:nth-child(2){ top:135px;  left:40px;  }
 .wing-steps-right .wing-btn:nth-child(3){ top:90px;  left:80px;  }
 .wing-steps-right .wing-btn:nth-child(4){ top:45px;  left:120px;  }
 .wing-steps-right .wing-btn:nth-child(5){ top:0px;  left:160px;  }
-
-
-
-
-
