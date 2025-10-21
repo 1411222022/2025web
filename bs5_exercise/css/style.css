@@ -52,7 +52,6 @@ container .col-md-4 img {
     text-decoration: underline;
 }
 
-
 middle-section {
     background-color: #b4e7ff;
 }
@@ -88,13 +87,13 @@ middle-section {
     background-color:#2979ce
 }
 .content-box {
-  background-color: #ffffff;   /* 白色背景 */
-  width: 100%;                 /* 區塊寬度（可調） */
-  margin: 90px auto;          /* 上下留白 + 水平置中 */
-  padding: 40px;              /* 內距，讓內容不要貼邊 */
+  background-color: #ffffff;
+  width: 100%;
+  margin: 90px auto;
+  padding: 40px; 
 }
 .navbar {
-  background: linear-gradient(to bottom, #4ebee0, #0b5166); /* 上淺下深的藍綠漸層 */
+  background: linear-gradient(to bottom, #4ebee0, #0b5166);
   padding: 10px 0;
 }
 .nav-link {
@@ -102,28 +101,23 @@ middle-section {
   font-weight: bold;
 }
 .outer-frame {
-  background-color: #b5e1f9;     /* 淺藍色背景 */
-  width: 90%;                    /* 外框寬度，比內容寬一點 */
-  margin: 30px auto;             /* 置中 + 上下留白 */
-  padding: 10px;                 /* 內距，讓白色框有空間 */
+  background-color: #b5e1f9;
+  width: 90%;
+  margin: 30px auto;
+  padding: 10px;
 }
 .aaa{
     color:rgb(255, 255, 255);
 }
 .site-footer {
-  background: linear-gradient(to top, #0b5166, #4ebee0); /* 黑色漸層 */
-  color: white;                   /* 白色文字 */
-  text-align: center;            /* 文字置中 */
-  padding: 20px 0;               /* 上下留白 */
-  font-size: 14px;               /* 字體大小 */
+  background: linear-gradient(to top, #0b5166, #4ebee0);
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+  font-size: 14px;
 }
 
 .site-footer a {
-  color: #ffffff;                /* 連結也是白色 */
-  text-decoration: none;        /* 移除底線 */
+  color: #ffffff;
+  text-decoration: none;
 }
-
-
-
-
-
