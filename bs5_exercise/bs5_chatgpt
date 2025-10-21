@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <title>FTDBLUEMOOD</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap 5（只用格線與reset，不用JS） -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    :root{
+      /* 設計稿尺寸（用來做桌機自動縮放的基準） */
+      --design-w: 1100;
+      --design-h: 900;
+
+      /* 顏色（接近作業圖） */
+      --outer-blue:#1c8dd6;
+      --outer-blue-light:#81c6f2;
+      --nav-top:#0ec1ef;
+      --nav-bottom:#07a0c9;
+      --panel-bg:#ffffff;
+      --panel-border:#bfe8f8;
+      --text:#3b3b3b;
+      --link:#0ea5d8;
+    }
+
+    /* 背景做成藍色與細紋感（簡化版） */
+    body{
+      margin:0;
+      color:var(--text);
+      background:
+        repeating-linear-gradient(45deg, rgba(255,255,255,.06) 0 6px, rgba(255,255,255,0) 6px 12px),
+        radial-gradient(circle at 30% 20%, #1892df 0 30%, #0f6bb2 60%, #07558f 100%);
+      min-height:100vh;
+      overflow-x:hidden;
+      font-family: Arial, Helvetica, "Microsoft JhengHei", "Noto Sans TC", sans-serif;
+    }
+
+    /* 讓整個作業頁（含上方白字Logo、白色內頁）一起縮放的外框 */
+    .page-scaler{
+      width: calc(var(--design-w) * 1px);
+      margin: 24px auto;
+      transform-origin: top center;
+    }
+    /* 桌機自動縮放：把整頁縮到剛好塞進視窗（寬、高取較小值） */
+    @media (min-width: 992px){
+      .page-scaler{
+        transform: scale(
+          min(
+            calc(100vw / var(--design-w)),
+            calc(100vh / var(--design-h))
+          )
+        );
+      }
+    }
+
+    /* 左上白字標題 */
+    .brand{
+      color:#fff;
+      margin-left: 18px;
+      margin-bottom: 10px;
+      line-height: 1.1;
+    }
+    .brand h1{
+      font-size: 20px;
+      font-weight: 800;
+      margin:0;
+      letter-spacing:.4px;
+    }
+    .brand small{
+      font-size: 10px;
+      opacity:.95;
+    }
+
+    /* 內頁白底 + 淺藍粗邊框（模擬作業圖厚邊） */
+    .page{
+      background: var(--panel-bg);
+      border: 10px solid var(--panel-border);
+      border-radius: 4px;
+      box-shadow: 0 2px 0 rgba(0,0,0,.1);
+    }
+
+    /* Hero 圖片 */
+    .hero{
+      width:100%;
+      height:260px;
+      object-fit: cover;
+      display:block;
+    }
+
+    /* 導覽列：整條漸層、白字、置中 */
+    .nav-bar{
+      background: linear-gradient(to bottom, var(--nav-top), var(--nav-bottom));
+      border-top: 1px solid rgba(255,255,255,.35);
+      border-bottom: 1px solid rgba(0,0,0,.1);
+    }
+    .nav-bar ul{
+      list-style:none;
+      margin:0;
+      padding: 12px 0;
+      display:flex;
+      justify-content:center;
+      gap: 40px;
+      flex-wrap:wrap;
+    }
+    .nav-bar a{
+      color:#fff;
+      text-decoration:none;
+      font-weight: 700;
+      font-size:14px;
+      text-shadow: 0 1px 0 rgba(0,0,0,.35);
+    }
+    .nav-bar a:hover{ text-decoration: underline; }
+
+    /* 主要內容內距 */
+    .content{
+      padding: 22px 20px 12px;
+    }
+
+    /* 小區塊標題（藍字） */
+    .block-title{
+      color:#1595cc;
+      font-weight: 700;
+      margin-bottom: 8px;
+      font-size: 18px;
+    }
+
+    /* 三個小欄（Options/News/Question） */
+    .mini-card{
+      background:#eaf7fc;
+      border:1px solid #d8eef9;
+      border-radius:6px;
+      padding:14px;
+      height:100%;
+    }
+    .mini-card img{
+      width:44px; height:44px; object-fit:cover; border-radius:50%; margin-right:10px;
+    }
+    .mini-card a{ color: var(--link); text-decoration:none; }
+    .mini-card a:hover{ text-decoration:underline; }
+
+    /* 左大卡（四圖+文字） */
+    .left-card{
+      border:1px solid #d8eef9;
+      background:#f7fcfe;
+      border-radius:6px;
+      padding:14px;
+      height:100%;
+    }
+    .left-card .thumb{ width:100%; height:90px; object-fit:cover; border-radius:6px; }
+    .left-card .avatar{ width:70px; height:70px; border-radius:8px; object-fit:cover; }
+
+    /* 右側清單卡 */
+    .list-card{
+      border:1px solid #d8eef9;
+      background:#eaf7fc;
+      border-radius:6px;
+      padding:14px;
+      height:100%;
+    }
+    .list-card ul{ padding-left: 18px; margin-bottom: 8px; }
+    .list-card li{ margin: 4px 0; }
+    .list-card a{ color: var(--link); text-decoration:none; }
+    .list-card a:hover{ text-decoration:underline; }
+
+    /* 下方兩欄 */
+    .long-card{
+      border:1px solid #d8eef9;
+      background:#f7fcfe;
+      border-radius:6px;
+      padding:14px;
+      height:100%;
+    }
+    .photo{
+      width:100%; height:110px; object-fit:cover; border-radius:6px;
+    }
+
+    /* 頁腳（黑色漸層 + 白字） */
+    .site-footer{
+      background: linear-gradient(to top, #000, #333);
+      color:#fff;
+      text-align:center;
+      padding: 14px 10px;
+      font-size: 12px;
+      border-top:1px solid rgba(255,255,255,.2);
+    }
+    .site-footer a{ color:#fff; text-decoration:none; }
+    .site-footer a:hover{ text-decoration:underline; }
+
+    /* RWD：小螢幕時調整間距與字級即可 */
+    @media (max-width: 991.98px){
+      .nav-bar ul{ gap: 20px; }
+      .content{ padding: 16px 14px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 整頁一起縮放的容器（含左上白字Logo） -->
+  <div class="page-scaler">
+
+    <!-- 左上 Logo 與標語（白字、在藍色背景上） -->
+    <div class="brand">
+      <h1>FTDBLUEMOOD</h1>
+      <small>SMALL COMPANY SLOGAN GOES HERE</small>
+    </div>
+
+    <!-- 內頁白底 + 淺藍粗框 -->
+    <div class="page">
+
+      <!-- 頂部大圖 -->
+      <img class="hero" src="https://images.unsplash.com/photo-1549880338-65ddcdfd017b?q=80&w=1600&auto=format&fit=crop" alt="hero">
+
+      <!-- 導覽列（整條藍漸層） -->
+      <nav class="nav-bar">
+        <ul class="container m-0">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Gallery</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- 內容 -->
+      <div class="content container">
+
+        <!-- 第一排：三個小欄 -->
+        <div class="row g-3 mb-2">
+          <div class="col-12 col-md-4">
+            <div class="mini-card d-flex">
+              <img src="https://picsum.photos/seed/opt/80/80" alt="">
+              <div>
+                <div class="block-title">Your Options</div>
+                <a href="#">Cras hendrerit est nec libero ornare gravida</a>
+                <div class="small mt-1">Donec interdum dignissim risus et vestibulum.</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-4">
+            <div class="mini-card d-flex">
+              <img src="https://picsum.photos/seed/clock/80/80" alt="">
+              <div>
+                <div class="block-title">Company News</div>
+                <a href="#">Donec interdum dignissim risus et vestibulum</a>
+                <div class="small mt-1">Donec eget nisi id magna tempor laoreet.</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-4">
+            <div class="mini-card d-flex">
+              <img src="https://picsum.photos/seed/help/80/80" alt="">
+              <div>
+                <div class="block-title">Have a Question?</div>
+                <a href="#">Cras hendrerit est nec libero ornare gravida</a>
+                <div class="small mt-1">Donec interdum dignissim risus et vestibulum.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 第二排：左大卡 + 右清單 -->
+        <div class="row g-3 mb-2">
+          <!-- 左 -->
+          <div class="col-12 col-lg-8">
+            <div class="left-card">
+              <div class="block-title">Etiam felis ipsum</div>
+
+              <div class="row g-3 align-items-start">
+                <div class="col-12 col-md-6">
+                  <div class="d-flex gap-3 align-items-center">
+                    <img class="avatar" src="https://picsum.photos/seed/a1/120/120" alt="">
+                    <div class="small">
+                      Vivamus ut risus sit amet ante tempor dapibus at eget quam. In blandit ante at massa faucibus.
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-12 col-md-6">
+                  <img class="thumb" src="https://picsum.photos/seed/team/600/400" alt="">
+                  <div class="small mt-1">In in dui eget nibh viverra mollis eget eget lacus. In non velit augue. Quisque dolor elit.</div>
+                </div>
+
+                <div class="col-12 col-md-6">
+                  <div class="small">
+                    Koreet aliquam leo tellus, dolor <a href="#">quislomequisque</a> nulla. Vestibulum libero nisl, porta vel.
+                  </div>
+                </div>
+
+                <div class="col-12 col-md-6">
+                  <div class="d-flex gap-3 align-items-center">
+                    <img class="avatar" src="https://picsum.photos/seed/a2/120/120" alt="">
+                    <div class="small">Nullam vehicula odio in felis varius a facilisis metus mollis. Fusce tempus dolor.</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 右 -->
+          <div class="col-12 col-lg-4">
+            <div class="list-card">
+              <div class="block-title">Duis blandit ultrices</div>
+              <ul class="small">
+                <li><a href="#">Donec tincidunt purus vitae</a></li>
+                <li><a href="#">Donec non egestas lectus lacus</a></li>
+                <li><a href="#">Cras porttitor hendrerit eleifend lacus</a></li>
+                <li><a href="#">Cras suscipit natoque penatibus</a></li>
+                <li><a href="#">Quisque malesuada ligula commodo</a></li>
+                <li><a href="#">Curabitur dignissim commodo</a></li>
+                <li><a href="#">Donec non egestas lectus lacus</a></li>
+                <li><a href="#">Cras porttitor hendrerit eleifend</a></li>
+                <li><a href="#">Cras suscipit natoque penatibus</a></li>
+                <li><a href="#">Quisque malesuada ligula commodo</a></li>
+                <li><a href="#">Curabitur dignissim commodo</a></li>
+              </ul>
+              <a href="#" class="small">» READ MORE</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 第三排：左長文 + 右圖片文 -->
+        <div class="row g-3">
+          <div class="col-12 col-lg-8">
+            <div class="long-card">
+              <div class="block-title">Nullam consectetur</div>
+              <p class="small mb-1"><strong>Phasellus porta. Fusce suscipit varius mi etsus. Nulla facilisi. Aenean nec eros. Vestibulum ante ipsum primis in faucibus.</strong></p>
+              <p class="small mb-1">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec et quam magna. Morbi sed elit erat. Proin sodales interdum elit, nisl ante tempor sed. Donec venenatis dui ac risus suscipit, non accumsan arcu dapibus scelerisque.
+              </p>
+              <a href="#" class="small">» READ MORE</a>
+            </div>
+          </div>
+
+          <div class="col-12 col-lg-4">
+            <div class="long-card">
+              <div class="block-title">In semper massa</div>
+              <img class="photo mb-2" src="https://picsum.photos/seed/wave/600/400" alt="">
+              <p class="small">Praesent vestibulum molestie lacus. Aenean Cursus sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. In nulla dui. Fusce feugiat malesuada odio.</p>
+              <a href="#" class="small">» READ MORE</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- 頁腳 -->
+      <footer class="site-footer">
+        <div class="container small">
+          <div>Copyright © 2011. Designed by Free Web Templates, coded from scratch for homework.</div>
+          <div><a href="#">Privacy Policy</a> | <a href="#">Terms of Use</a> | <a href="#">HTML</a> · <a href="#">CSS</a></div>
+        </div>
+      </footer>
+    </div>
+  </div>
+</body>
+</html>

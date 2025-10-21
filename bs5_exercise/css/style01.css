@@ -1,0 +1,131 @@
+.nav-list{
+    list-style:none;
+    padding:0;
+    margin:0;
+    
+}
+.nav-list li{
+    display:inline-block;
+    margin:0 10px;
+}
+.nav-list a{
+    text-decoration:none;
+    color:black;
+    font-weight:bold;
+    font-size:18px;
+}
+.container .col-md-4 img{
+    margin-top:5px;
+}
+.container .col-md-4 h4{
+    color:#00a0e3;
+    margin-top:0;
+    margin-bottom:8px;
+    font-size:20px;
+}
+.container .col-md-4 a{
+    color:#00a0e3;
+    text-decoration:none;
+}
+.container .col-md-4 a:hover{
+    text-decoration:underline;
+}
+.container .border {
+    border: 1px solid #b0d9f2;
+    border-radius: 4px;
+}
+.container h4 {
+    font-weight: bold;
+    color: #00a0e3;
+    margin-bottom: 15px;
+}
+container .col-md-4 img {
+    width: 100%;
+    border-radius: 3px;
+    border: 1px solid #aad8f0;
+}
+.container a {
+    color: #00a0e3;
+    text-decoration: none;
+}
+.container a:hover {
+    text-decoration: underline;
+}
+
+
+middle-section {
+    background-color: #b4e7ff;
+}
+.middle-section .left-box,
+.middle-section .right-box {
+    background-color: #bbf0ff;
+    border: 1px solid #848484;
+    border-radius: 4px;
+}
+.middle-section .person-img {
+    border: 2px solid #000;
+    border-radius: 0;
+    width: 100px;
+    height: auto;
+}
+.middle-section .right-box {
+    background-color:#c3f3ff;
+}
+.middle-section .right-box a {
+    color: #00eaff;
+    text-decoration: underline;
+    font-weight: bold;
+}
+.middle-section ul{
+    padding-left:20px;
+    margin-bottom:10px;
+}
+.middle-section li{
+    margin-bottom:5px;
+}
+.middle-section .row{
+    align-items:stretch;
+}
+.blue-bg{
+    background-color:#2979ce
+}
+.content-box {
+  background-color: #ffffff;   /* 白色背景 */
+  width: 100%;                 /* 區塊寬度（可調） */
+  margin: 90px auto;          /* 上下留白 + 水平置中 */
+  padding: 40px;              /* 內距，讓內容不要貼邊 */
+}
+.navbar {
+  background: linear-gradient(to bottom, #4ebee0, #0b5166); /* 上淺下深的藍綠漸層 */
+  padding: 10px 0;
+}
+.nav-link {
+  color: white !important;
+  font-weight: bold;
+}
+.outer-frame {
+  background-color: #b5e1f9;     /* 淺藍色背景 */
+  width: 90%;                    /* 外框寬度，比內容寬一點 */
+  margin: 30px auto;             /* 置中 + 上下留白 */
+  padding: 10px;                 /* 內距，讓白色框有空間 */
+}
+.aaa{
+    color:rgb(255, 255, 255);
+}
+.site-footer {
+  background: linear-gradient(to top, #0b5166, #4ebee0); /* 黑色漸層 */
+  color: white;                   /* 白色文字 */
+  text-align: center;            /* 文字置中 */
+  padding: 20px 0;               /* 上下留白 */
+  font-size: 14px;               /* 字體大小 */
+}
+
+.site-footer a {
+  color: #ffffff;                /* 連結也是白色 */
+  text-decoration: none;        /* 移除底線 */
+}
+
+
+
+
+

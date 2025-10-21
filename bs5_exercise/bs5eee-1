@@ -70,24 +70,24 @@
                         <div class="col-md-8 p-3 left-box">
                         <h4 class="text-primary">Etiam felis ipsum</h4>
 
-                            <div class="row">
-                                <div class="col-6 d-flex mb-3">
-                                <img src="images/img3.jpg" alt="person1" class="me-3 person-img img-fuild">
-                                <p>Vivamus ut risus sit amet ante tempor dapibus eget at quam. In blandit ante at massa faucibus.</p>
-                                </div>
-                                <div class="col-6 d-flex mb-3">
-                                <img src="images/img4.jpg" alt="person2" class="me-3 person-img img-fuild">
-                                <p>In in dui eget nibh viverra mollis eget eget lacus.</p>
-                                </div>
-                                <div class="col-6 d-flex mb-3">
-                                <img src="images/img1.jpg" alt="person3" class="me-3 person-img img-fuild">
-                                <p>Koreet aliquam leo tellus. Vestibulum libero nisl, porta vel.</p>
-                                </div>
-                                <div class="col-6 d-flex mb-3">
-                                <img src="images/img2.jpg" alt="person4" class="me-3 person-img img-fuild">
-                                <p>Koreet aliquam leo tellus. Vestibulum libero nisl, porta vel.</p>
-                                </div>
+                        <div class="row">
+                            <div class="col-6 d-flex mb-3">
+                            <img src="images/img3.jpg" alt="person1" class="me-3 person-img" width="100">
+                            <p>Vivamus ut risus sit amet ante tempor dapibus eget at quam. In blandit ante at massa faucibus.</p>
                             </div>
+                            <div class="col-6 d-flex mb-3">
+                            <img src="images/img4.jpg" alt="person2" class="me-3 person-img" width="100">
+                            <p>In in dui eget nibh viverra mollis eget eget lacus.</p>
+                            </div>
+                            <div class="col-6 d-flex mb-3">
+                            <img src="images/img1.jpg" alt="person3" class="me-3 person-img" width="100">
+                            <p>Koreet aliquam leo tellus. Vestibulum libero nisl, porta vel.</p>
+                            </div>
+                            <div class="col-6 d-flex mb-3">
+                            <img src="images/img2.jpg" alt="person4" class="me-3 person-img" width="100">
+                            <p>Koreet aliquam leo tellus. Vestibulum libero nisl, porta vel.</p>
+                            </div>
+                        </div>
                         </div>
 
                         <!-- 右邊 -->
