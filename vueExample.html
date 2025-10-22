@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue example</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+
+<body>
+<div id="myapp1">
+    {{msg}}
+    <div>
+        {{msg2}}
+    </div>
+    <img v-bind:src="msg2" alt="">
+    <img :src="'images/'+msg3" alt="" v-show="showMsg3">
+    <img v-for="item in aryImg" :src="'images/'+item" alt="">
+</div>
+
+<section id="sidebar">
+    <h2>{{title}}</h2>
+        <ul id="port">
+            <!--<li><img alt="comp0" src="images/markinjapan.jpg"></li>
+            <li><img alt="comp1" src="images/a2g.jpg"></li>
+            <li><img alt="comp2" src="images/foobar.jpg"></li>
+            <li><img alt="comp3" src="images/rpm.jpg"></li>-->
+            <li v-for="item in port"><img :src="images/'+item.img" :alt="item.alt"></li>
+        </ul>
+</section>
+
+</body>
+<script>
+    var vueApp=Vue.createApp({
+        data(){
+            return{
+                msg:"Hello!",
+                msg2:"images/tokyo.jpg",
+                msg3:"foobar.jpg",
+                showMsg3: true,
+                aryImg: ["a2g.jpg","markinjapan.jpg","rpm.jpg"]
+            }
+        }
+    }).mount("#myapp1");
+
+    var vueApp2=Vue.createApp({
+        data(){
+            return{
+                title:"Our Work",
+                port:[
+                    {alt:"comp0", img:"markinjapan.jpg"},
+                    {alt:"comp1", img:"a2g.jpg"},
+                    {alt:"comp2", img:"foobar.jpg"},
+                    {alt:"comp3", img:"rpm.jpg"},
+                    {alt:"tokyo", img:"tokyo.jpg"}
+                ]
+            }
+        }
+    }).mount("#sidebar");
+    
+</script>
+</html>
