@@ -2,6 +2,10 @@ var express = require("express");
 var server = express();
 var bodyParser = require("body-parser");
 
+
+server.set("view engine", "ejs");
+server.set("views", __dirname + "/views");
+
 var fileUpload = require("express-fileupload");
 
 server.use(express.static(__dirname + "/Public"));
@@ -71,9 +75,9 @@ server.post("/contact", (req, res) =>{
     var upFile=req.files.myFile1;
     upFile.mv(__dirname+"/Public/upload/"+upFile.name, function(err){
         if(err==null){
-            res.redirect("/error.html");
+            res.render("msg",{message:"I got a file: "+upFile.name})
         }else{
-            res.redirect("/about.html");
+            res.render("msg",{message:err});
         }
     })
 })
