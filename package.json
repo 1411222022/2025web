@@ -1,14 +1,14 @@
 {
-  "name": "2025web",
+  "name": "2025website",
   "version": "1.0.0",
   "description": "",
-  "homepage": "https://github.com/1411222022/2025web#readme",
+  "homepage": "https://github.com/kfhwang/2025website#readme",
   "bugs": {
-    "url": "https://github.com/1411222022/2025web/issues"
+    "url": "https://github.com/kfhwang/2025website/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/1411222022/2025web.git"
+    "url": "git+https://github.com/kfhwang/2025website.git"
   },
   "license": "ISC",
   "author": "",
@@ -19,6 +19,8 @@
     "start": "node server.js"
   },
   "dependencies": {
-    "express": "^5.1.0"
+    "express": "^5.1.0",
+    "express-fileupload": "^1.5.2",
+    "nedb-promises": "^6.2.3"
   }
 }
