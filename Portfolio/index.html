@@ -1,20 +1,209 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-Hant">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>introduction myself</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Portfolio - Ling Yu</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <h1>Welcome to My Portfolio</h1>
-    <p>This is a brief introduction about myself.</p>
-    <h2>Projects</h2>
-    <ul>
-        <li>Project 1: Description</li>
-        <li>Project 2: Description</li>
-        <li>Project 3: Description</li>
-    </ul>
-    <h2>Contact</h2>
-    <p>Email: myemail@example.com</p>
+
+  <!-- A. 封面：正常直向滾動 -->
+  <section class="cover" id="home">
+    <div class="cover-inner">
+      <div class="cover-text">
+        HI, I’M <br />
+        <span>LING YU</span>
+      </div>
+
+      <img class="cover-img" src="https://picsum.photos/700/900" alt="character placeholder" />
+    </div>
+  </section>
+
+  <!-- B. 快速瀏覽區：在這段裡面，滾輪 = 快速左右滑 -->
+  <section class="quick" id="works">
+    <div class="quick-inner">
+      <div class="quick-track" id="quickTrack">
+        <a class="quick-card" href="#"><img src="https://picsum.photos/seed/a/640/420" alt=""></a>
+        <a class="quick-card" href="#"><img src="https://picsum.photos/seed/b/640/420" alt=""></a>
+        <a class="quick-card" href="#"><img src="https://picsum.photos/seed/c/640/420" alt=""></a>
+        <a class="quick-card" href="#"><img src="https://picsum.photos/seed/d/640/420" alt=""></a>
+        <a class="quick-card" href="#"><img src="https://picsum.photos/seed/e/640/420" alt=""></a>
+        <a class="quick-card" href="#"><img src="https://picsum.photos/seed/f/640/420" alt=""></a>
+      </div>
+
+      <div class="quick-caption">
+        <div class="quick-title">Quick Browse</div>
+        <div class="quick-sub">Scroll to skim projects fast</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- D. About Me -->
+  <section class="about" id="about">
+    <div class="about-inner">
+      <div class="about-text">
+        <h2>ABOUT ME</h2>
+        <p>
+          你好，我是 Ling Yu。這裡放一段簡短自我介紹（2~4 行），包含你的專長、喜歡的領域、作品方向。
+        </p>
+        <p>
+          例如：我專注於 UI/UX 與互動設計，喜歡把視覺、排版與動效做成有節奏的作品集體驗。
+        </p>
+      </div>
+
+      <div class="about-photo">
+        <img src="https://picsum.photos/seed/me/900/1200" alt="Ling Yu photo">
+      </div>
+    </div>
+  </section>
+
+  <!-- C. 大作品橫向區：往下滾動時，內容往左跑 -->
+  <section class="h-section" id="hSection">
+    <div class="h-sticky">
+      <div class="h-track" id="hTrack">
+        <article class="work">作品 1</article>
+        <article class="work">作品 2</article>
+        <article class="work">作品 3</article>
+        <article class="work">作品 4</article>
+      </div>
+    </div>
+  </section>
+
+  <!-- E. Connect Me -->
+  <section class="connect" id="contact">
+    <div class="connect-inner">
+      <h2 class="connect-title">CONECT ME</h2>
+
+      <form class="connect-form" autocomplete="off">
+        <div class="field">
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" placeholder="you@example.com" />
+        </div>
+
+        <div class="field">
+          <label for="phone">Phone</label>
+          <input id="phone" name="phone" type="tel" placeholder="09xx-xxx-xxx" />
+        </div>
+
+        <div class="field">
+          <label for="title">稱謂</label>
+          <input id="title" name="title" type="text" placeholder="先生 / 小姐 / 同學..." />
+        </div>
+
+        <button type="button" class="connect-btn">Send</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- ✅ F. Footer（頁腳） -->
+  <footer class="footer">
+    <div class="footer-inner">
+
+      <!-- 左：Logo（先用 placeholder，你之後換成圖片） -->
+      <div class="footer-brand">
+        <div class="footer-logo" aria-hidden="true"></div>
+        <div class="footer-name">LING YU</div>
+      </div>
+
+      <!-- 右：書籤 + 社群 -->
+      <div class="footer-right">
+        <nav class="footer-nav">
+          <a href="#home">Home</a>
+          <a href="#works">Works</a>
+          <a href="#about">About</a>
+          <a href="#contact">Contact</a>
+        </nav>
+
+        <div class="footer-social">
+          <!-- Instagram -->
+          <a href="#" aria-label="Instagram" class="icon-btn">
+            <svg viewBox="0 0 24 24" class="icon" aria-hidden="true">
+              <path fill="currentColor" d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm10 2H7a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3zm-5 4a6 6 0 1 1 0 12a6 6 0 0 1 0-12zm0 2a4 4 0 1 0 0 8a4 4 0 0 0 0-8zm6.5-.6a1.1 1.1 0 1 1-2.2 0a1.1 1.1 0 0 1 2.2 0z"/>
+            </svg>
+          </a>
+
+          <!-- Twitter/X -->
+          <a href="#" aria-label="X" class="icon-btn">
+            <svg viewBox="0 0 24 24" class="icon" aria-hidden="true">
+              <path fill="currentColor" d="M18.9 2H22l-6.8 7.8L23 22h-6.5l-5.1-6.4L5.7 22H2l7.3-8.4L1 2h6.6l4.6 5.8L18.9 2zm-1.1 18h1.7L7.5 3.9H5.7L17.8 20z"/>
+            </svg>
+          </a>
+
+          <!-- YouTube -->
+          <a href="#" aria-label="YouTube" class="icon-btn">
+            <svg viewBox="0 0 24 24" class="icon" aria-hidden="true">
+              <path fill="currentColor" d="M21.6 7.2a3 3 0 0 0-2.1-2.1C17.7 4.6 12 4.6 12 4.6s-5.7 0-7.5.5A3 3 0 0 0 2.4 7.2A31 31 0 0 0 2 12a31 31 0 0 0 .4 4.8a3 3 0 0 0 2.1 2.1c1.8.5 7.5.5 7.5.5s5.7 0 7.5-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 22 12a31 31 0 0 0-.4-4.8zM10 15.5v-7l6 3.5-6 3.5z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <script>
+    // ====== C. 大作品橫向區：直向滾動 -> 橫向位移 ======
+    const section = document.getElementById("hSection");
+    const track = document.getElementById("hTrack");
+
+    function updateHorizontalScroll() {
+      const rect = section.getBoundingClientRect();
+      const viewH = window.innerHeight;
+
+      const totalScroll = section.offsetHeight - viewH;
+      const scrolled = Math.min(Math.max(-rect.top, 0), totalScroll);
+      const progress = totalScroll === 0 ? 0 : scrolled / totalScroll;
+
+      const maxX = track.scrollWidth - window.innerWidth;
+      const x = Math.max(0, Math.min(maxX, progress * maxX));
+
+      track.style.transform = `translateX(${-x}px)`;
+    }
+
+    function setSectionHeight() {
+      const extra = track.scrollWidth - window.innerWidth;
+      section.style.height = `${window.innerHeight + Math.max(0, extra)}px`;
+    }
+
+    window.addEventListener("scroll", updateHorizontalScroll, { passive: true });
+
+    // ====== B. 快速瀏覽區：在區塊內，把滾輪轉成左右滑（到邊界就放行上下滾） ======
+    const quickTrack = document.getElementById("quickTrack");
+
+    function isElementInViewport(el) {
+      const r = el.getBoundingClientRect();
+      return r.top < window.innerHeight && r.bottom > 0;
+    }
+
+    window.addEventListener("wheel", (e) => {
+      if (!isElementInViewport(quickTrack)) return;
+
+      const SPEED = 2.4;
+
+      const maxScrollLeft = quickTrack.scrollWidth - quickTrack.clientWidth;
+      const atStart = quickTrack.scrollLeft <= 0;
+      const atEnd = quickTrack.scrollLeft >= maxScrollLeft - 1;
+
+      const goingRight = e.deltaY > 0;
+      const goingLeft = e.deltaY < 0;
+
+      const canScrollHorizontally =
+        (goingRight && !atEnd) || (goingLeft && !atStart);
+
+      if (canScrollHorizontally) {
+        e.preventDefault();
+        quickTrack.scrollLeft += e.deltaY * SPEED;
+      }
+    }, { passive: false });
+
+    // 初始化
+    function init() {
+      setSectionHeight();
+      updateHorizontalScroll();
+    }
+    window.addEventListener("resize", init);
+    init();
+  </script>
 </body>
 </html>
