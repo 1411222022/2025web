@@ -1,675 +1,494 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="zh-Hant">
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Portfolio</title>
 
-    <title>Bootstrap Example</title>
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Leaflet -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
 
-    <!-- Custom Fonts -->
-    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
-    <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet'
-        type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
 
-    <!-- Theme CSS -->
-    <link href="css/agency.css" rel="stylesheet">
+  <!-- GSAP -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
 
+  <!-- Your CSS -->
+  <link rel="stylesheet" href="stylee.css" />
 </head>
 
-<body id="page-top" class="">
+<body>
 
-    <!-- Navigation -->
-    <nav id="mainNav" class="navbar fixed-top navbar-expand-md  navbar-custom bg-dark">
-        <div class="container">
-            <a class="float-start navbar-brand " href="#page-top">Bootstrap</a>
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <nav class="float-end navbar-header ">
-                <button type="button" class="navbar-toggler" data-bs-toggle="collapse"
-                    data-bs-target="#bs-example-navbar-collapse-1">
-                    <!-- <span class="navbar-toggler-icon bg-light"> </span> -->
-                    <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
-                </button>
-                <!-- Collect the nav links, forms, and other content for toggling -->
-                <div class=" collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                    <ul class="nav navbar-nav" >
-                        <li>
-                            <a class=" ms-3" href="#services" >Services</a>
-                        </li>
-                        <li>
-                            <a class=" ms-3" href="#portfolio">Portfolio</a>
-                        </li>
-                        <li>
-                            <a class=" ms-3" href="about.html">About</a>
-                        </li>
-                        <li>
-                            <a class=" ms-3" href="#contact">Contact</a>
-                        </li>
-                    </ul>
-                </div>
-                <!-- /.navbar-collapse -->
-            </nav>
-            <!-- /.container-fluid -->
-        </div>
-    </nav>
-    <!-- Header -->
-    <header>
-        <div class="container">
-            <div class="intro-text">
-                <div class="intro-lead-in">Welcome To Our Studio!</div>
-                <div class="intro-heading">It's Nice To Meet You</div>
-                <a href="#services" class=" btn btn-xl">Tell Me More</a>
-            </div>
-        </div>
-    </header>
+  <!-- A. Cover -->
+  <section class="cover" id="home">
+    <div class="cover-wrap">
+      <img class="cover-bg" src="imgg/cover-bg4.jpg" alt="cover background">
 
-    <!-- Services Section -->
-    <section id="services">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">Services</h2>
-                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
-                </div>
-            </div>
-            <div class="row text-center">
-                <div v-for="item in Services" class="col-md-4">
-                    <span class="fa-stack fa-4x">
-                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                        <i class="fa fa-stack-1x fa-inverse" v-bind:class="item.icon"></i>
-                    </span>
-                    <h4 class="service-heading">{{item.title}}</h4>
-                    <p class="text-muted">{{item.text}}</p>
-                </div>
-                 <!-- <div class="col-md-4">
-                    <span class="fa-stack fa-4x">
-                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                        <i class="fa fa-shopping-cart fa-stack-1x fa-inverse"></i>
-                    </span>
-                    <h4 class="service-heading">E-Commerce</h4>
-                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam
-                        architecto quo inventore harum ex magni, dicta impedit.</p>
-                </div>
-                <div class="col-md-4">
-                    <span class="fa-stack fa-4x">
-                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                        <i class="fa fa-laptop fa-stack-1x fa-inverse"></i>
-                    </span>
-                    <h4 class="service-heading">Responsive Design</h4>
-                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam
-                        architecto quo inventore harum ex magni, dicta impedit.</p>
-                </div>
-                <div class="col-md-4">
-                    <span class="fa-stack fa-4x">
-                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                        <i class="fa fa-lock fa-stack-1x fa-inverse"></i>
-                    </span>
-                    <h4 class="service-heading">Web Security</h4>
-                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam
-                        architecto quo inventore harum ex magni, dicta impedit.</p>
-                </div> -->
-            </div>
-        </div>
-    </section>
+      <img class="cover-tree cover-tree--left" src="imgg/tree-left.png" alt="left tree">
+      <img class="cover-tree cover-tree--right" src="imgg/tree-left.png" alt="right tree">
 
-    <!-- Portfolio Grid Section -->
-    <section id="portfolio" class="bg-light-gray">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">Portfolio</h2>
-                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
-                </div>
-            </div>
-            <div class="row">
-                <div v-for="(item,idx) in Portfolio" class="col-md-4 col-sm-6 col-xs-12 portfolio-item">
-                    <a v-bind:href="item.href" class="portfolio-link" data-bs-toggle="modal">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content">
-                                <i class="fa fa-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img :src="item.imgSrc" class="w-100" alt="">
-                    </a>
-                    <div class="portfolio-caption">
-                        <h4 v-if="idx%2==0">{{item.title}}</h4>
-                        <h4 v-else>{{item.title}} 2</h4>
-                        <p class="text-muted">{{item.subtitle}}</p>
-                    </div>
-                </div>
-                   <!-- <div class="col-md-4 col-sm-6 portfolio-item">
-                    <a href="#portfolioModal1" class="portfolio-link" data-bs-toggle="modal">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content">
-                                <i class="fa fa-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img src="img/portfolio/roundicons.png" class="img-fluid" alt="">
-                    </a>
-                    <div class="portfolio-caption">
-                        <h4>Round Icons</h4>
-                        <p class="text-muted">Graphic Design</p>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6 portfolio-item">
-                    <a href="#portfolioModal2" class="portfolio-link" data-bs-toggle="modal">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content">
-                                <i class="fa fa-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img src="img/portfolio/startup-framework.png" class="img-fluid" alt="">
-                    </a>
-                    <div class="portfolio-caption">
-                        <h4>Startup Framework</h4>
-                        <p class="text-muted">Website Design</p>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6 portfolio-item">
-                    <a href="#portfolioModal3" class="portfolio-link" data-bs-toggle="modal">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content">
-                                <i class="fa fa-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img src="img/portfolio/treehouse.png" class="w-100" alt="">
-                    </a>
-                    <div class="portfolio-caption">
-                        <h4>Treehouse</h4>
-                        <p class="text-muted">Website Design</p>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6 portfolio-item">
-                    <a href="#portfolioModal4" class="portfolio-link" data-bs-toggle="modal">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content">
-                                <i class="fa fa-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img src="img/portfolio/golden.png" class="w-100" alt="">
-                    </a>
-                    <div class="portfolio-caption">
-                        <h4>Golden</h4>
-                        <p class="text-muted">Website Design</p>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6 portfolio-item">
-                    <a href="#portfolioModal5" class="portfolio-link" data-bs-toggle="modal">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content">
-                                <i class="fa fa-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img src="img/portfolio/escape.png" class="w-100" alt="">
-                    </a>
-                    <div class="portfolio-caption">
-                        <h4>Escape</h4>
-                        <p class="text-muted">Website Design</p>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6 portfolio-item">
-                    <a href="#portfolioModal6" class="portfolio-link" data-bs-toggle="modal">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content">
-                                <i class="fa fa-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img src="img/portfolio/dreams.png" class="w-100" alt="">
-                    </a>
-                    <div class="portfolio-caption">
-                        <h4>Dreams</h4>
-                        <p class="text-muted">3D Design</p>
-                    </div>
-                </div> -->
-            </div>
-        </div>
-    </section>
+      <img class="cover-center" src="imgg/new.png" alt="center asset">
 
-    <!-- About Section -->
-    <section id="about">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">About</h2>
-                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-12">
-                    <ul class="timeline">
-                        <li>
-                            <div class="timeline-image">
-                                <img class="rounded-circle w-100" src="img/about/1.jpg" alt="">
-                            </div>
-                            <div class="timeline-panel">
-                                <div class="timeline-heading">
-                                    <h4>2019-2021</h4>
-                                    <h4 class="subheading">Our Humble Beginnings</h4>
-                                </div>
-                                <div class="timeline-body">
-                                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt
-                                        ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam,
-                                        recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!
-                                    </p>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="timeline-inverted">
-                            <div class="timeline-image">
-                                <img class="rounded-circle w-100" src="img/about/2.jpg" alt="">
-                            </div>
-                            <div class="timeline-panel">
-                                <div class="timeline-heading">
-                                    <h4>March 2021</h4>
-                                    <h4 class="subheading">An Agency is Born</h4>
-                                </div>
-                                <div class="timeline-body">
-                                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt
-                                        ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam,
-                                        recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!
-                                    </p>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="timeline-image">
-                                <img class="rounded-circle w-100" src="img/about/3.jpg" alt="">
-                            </div>
-                            <div class="timeline-panel">
-                                <div class="timeline-heading">
-                                    <h4>December 2021</h4>
-                                    <h4 class="subheading">Transition to Full Service</h4>
-                                </div>
-                                <div class="timeline-body">
-                                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt
-                                        ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam,
-                                        recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!
-                                    </p>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="timeline-inverted">
-                            <div class="timeline-image">
-                                <img class="rounded-circle w-100" src="img/about/4.jpg" alt="">
-                            </div>
-                            <div class="timeline-panel">
-                                <div class="timeline-heading">
-                                    <h4>July 2022</h4>
-                                    <h4 class="subheading">Phase Two Expansion</h4>
-                                </div>
-                                <div class="timeline-body">
-                                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt
-                                        ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam,
-                                        recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!
-                                    </p>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="timeline-inverted">
-                            <div class="timeline-image">
-                                <h4>Be Part
-                                    <br>Of Our
-                                    <br>Story!
-                                </h4>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Clients Aside -->
-    <aside class="clients">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-3 col-sm-6">
-                    <a href="#">
-                        <img src="img/logos/envato.jpg" class="w-100 img-centered" alt="">
-                    </a>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <a href="#">
-                        <img src="img/logos/designmodo.jpg" class="w-100 img-centered" alt="">
-                    </a>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <a href="#">
-                        <img src="img/logos/themeforest.jpg" class="w-100 img-centered" alt="">
-                    </a>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <a href="#">
-                        <img src="img/logos/creative-market.jpg" class="w-100 img-centered" alt="">
-                    </a>
-                </div>
-            </div>
-        </div>
-    </aside>
+      <div class="cover-title">
+        <h1 class="cover-title__text m-0">Hello world!</h1>
+      </div>
+    </div>
+  </section>
 
-    <!-- Contact Section -->
-    <section id="contact">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">Contact Us</h2>
-                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-12">
-                    <!-- <form name="sentMessage" id="contactForm" action="/contact"  method="POST" enctype="multipart/form-data"> -->
-                    <form name="sentMessage" id="contactForm" action="/contact"  method="POST" enctype="application/json">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="Your Name *" id="name" name="username" required
-                                        data-validation-required-message="Please enter your name.">
-                                    <p class="help-block text-danger"></p>
-                                </div>
-                                <div class="form-group">
-                                    <input type="email" class="form-control" placeholder="Your Email *" id="email" name="email"
-                                        required data-validation-required-message="Please enter your email address.">
-                                    <p class="help-block text-danger"></p>
-                                </div>
-                                <div class="form-group">
-                                    <input type="tel" class="form-control" placeholder="Your Phone *" id="phone" name="telphone"
-                                        required data-validation-required-message="Please enter your phone number.">
-                                    <p class="help-block text-danger"></p>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <textarea class="form-control" placeholder="Your Message *" id="message" name="msg" required
-                                        data-validation-required-message="Please enter a message."></textarea>
-                                    <p class="help-block text-danger"></p>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <input type="file" name="myFile1" id="myFile1" accept="image/*">
-                                </div>
-                            </div>
-                            <div class="clearfix"></div>
-                            <div class="col-lg-12 text-center">
-                                <div id="success"></div>
-                                <button type="submit" class="btn btn-xl">Send Message</button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
+  <!-- B. Quick Browse -->
+  <section class="quick" id="works">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
 
-    <footer>
-        <div class="container-fluid">
-            <div class="row ">
-                <div class="col-md-4">
-                    <span class="copyright">Copyright &copy; Your Website</span>
-                </div>
-                <div class="col-md-4">
-                    <ul class="justify-content-center list-group  list-group-horizontal social-buttons">
-                        <li class="border-0 list-group-item bg-transparent"><a href="#"><i class="fa fa-twitter"></i></a>
-                        </li>
-                        <li class="border-0 list-group-item bg-transparent"><a href="#"><i class="fa fa-facebook"></i></a>
-                        </li>
-                        <li class="border-0 list-group-item bg-transparent"><a href="#"><i class="fa fa-linkedin"></i></a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="col-md-4">
-                    <ul class="justify-content-center list-group list-group-horizontal">
-                        <li class="list-group-item border-0"> <a href="#">Privacy Policy</a>
-                        </li>
-                        <li class="list-group-item border-0"><a href="#">Terms of Use</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </footer>
+          <div class="quick-list">
+            <a class="quick-card" href="#"><img src="imgg/pic1.jpg" alt=""></a>
+            <a class="quick-card" href="#"><img src="imgg/pic2.png" alt=""></a>
+            <a class="quick-card" href="#"><img src="imgg/pic3.jpg" alt=""></a>
+            <a class="quick-card" href="#"><img src="imgg/pic4.png" alt=""></a>
+            <a class="quick-card" href="#"><img src="imgg/pic5.JPG" alt=""></a>
+            <a class="quick-card" href="#"><img src="imgg/pic6.png" alt=""></a>
+          </div>
 
-    <!-- Portfolio Modals -->
-    <!-- Use the modals below to showcase details about your portfolio projects! -->
+          <div class="quick-caption text-center mt-4">
+            <div class="quick-title reveal-text">Showcase</div>
+            <div class="quick-sub reveal-text">Scroll to skim projects fast</div>
+          </div>
 
-    <!-- Portfolio Modal 1 -->
-    <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog modal-fullscreen">
-            <div class="modal-content">
-                <div class="close-modal" data-bs-dismiss="modal">
-                    <div class="lr">
-                        <div class="rl">
-                        </div>
-                    </div>
-                </div>
-                <div class="container">
-                    <div class="row justify-content-center">
-                        <div class="col-8">
-                            <div class="modal-body ">
-                                <!-- Project Details Go Here -->
-                                <h2>Project Name</h2>
-                                <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                                <img class="img-fluid img-centered" src="img/portfolio/roundicons-free.png" alt="">
-                                <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur
-                                    adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt
-                                    repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae,
-                                    nostrum, reiciendis facere nemo!</p>
-                                <p>
-                                    <strong>Want these icons in this portfolio item sample?</strong>You can download 60
-                                    of them for free, courtesy of <a
-                                        href="https://getdpd.com/cart/hoplink/18076?referrer=bvbo4kax5k8ogc">RoundIcons.com</a>,
-                                    or you can purchase the 1500 icon set <a
-                                        href="https://getdpd.com/cart/hoplink/18076?referrer=bvbo4kax5k8ogc">here</a>.
-                                </p>
-                                <ul class="list-inline">
-                                    <li>Date: July 2021</li>
-                                    <li>Client: Round Icons</li>
-                                    <li>Category: Graphic Design</li>
-                                </ul>
-                                <button type="button" class="btn btn-primary" data-bs-dismiss="modal"><i
-                                        class="fa fa-times"></i> Close Project</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- D. About -->
+  <section class="about" id="about">
+    <div class="about-deco">
+      <img class="about-deco__item about-deco__item--1" src="imgg/pic33.png" alt="">
+      <img class="about-deco__item about-deco__item--2" src="imgg/pic34.png" alt="">
     </div>
 
-    <!-- Portfolio Modal 2 -->
-    <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog modal-fullscreen">
-            <div class="modal-content">
-                <div class="close-modal" data-bs-dismiss="modal">
-                    <div class="lr">
-                        <div class="rl">
-                        </div>
-                    </div>
-                </div>
-                <div class="container">
-                    <div class="row justify-content-center">
-                        <div class="col-8">
-                            <div class="modal-body">
-                                <h2>Project Heading</h2>
-                                <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                                <img class="w-100 img-centered"
-                                    src="img/portfolio/startup-framework-preview.png" alt="">
-                                <p><a href="http://designmodo.com/startup/?u=787">Startup Framework</a> is a website
-                                    builder for professionals. Startup Framework contains components and complex blocks
-                                    (PSD+HTML Bootstrap themes and templates) which can easily be integrated into almost
-                                    any design. All of these components are made in the same style, and can easily be
-                                    integrated into projects, allowing you to create hundreds of solutions for your
-                                    future projects.</p>
-                                <p>You can preview Startup Framework <a
-                                        href="http://designmodo.com/startup/?u=787">here</a>.</p>
-                                <button type="button" class="btn btn-primary" data-bs-dismiss="modal"><i
-                                        class="fa fa-times"></i> Close Project</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <div class="container">
+      <div class="row g-4 align-items-center">
+        <div class="col-12 col-lg-5">
+          <div class="about-text">
+            <h2 class="reveal-text mb-3">ABOUT ME</h2>
+            <p class="reveal-text mb-2">嗨，我是 Tso Ling Yu，目前就讀國立臺中科技大學多媒體設計系。</p>
+            <p class="reveal-text mb-0">熟悉 Figma、InDesign、AE、Premiere、Maya。</p>
+          </div>
         </div>
-    </div>
 
-    <!-- Portfolio Modal 3 -->
-    <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog modal-fullscreen">
-            <div class="modal-content">
-                <div class="close-modal" data-bs-dismiss="modal">
-                    <div class="lr">
-                        <div class="rl">
-                        </div>
-                    </div>
-                </div>
-                <div class="container">
-                    <div class="row justify-content-center">
-                        <div class="col-8">
-                            <div class="modal-body">
-                                <!-- Project Details Go Here -->
-                                <h2>Project Name</h2>
-                                <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                                <img class="w-100 img-centered" src="img/portfolio/treehouse-preview.png"
-                                    alt="">
-                                <p>Treehouse is a free PSD web template built by <a
-                                        href="https://www.behance.net/MathavanJaya">Mathavan Jaya</a>. This is bright
-                                    and spacious design perfect for people or startup companies looking to showcase
-                                    their apps or other projects.</p>
-                                <p>You can download the PSD template in this portfolio sample item at <a
-                                        href="http://freebiesxpress.com/gallery/treehouse-free-psd-web-template/">FreebiesXpress.com</a>.
-                                </p>
-                                <button type="button" class="btn btn-primary" data-bs-dismiss="modal"><i
-                                        class="fa fa-times"></i> Close Project</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div class="col-12 col-lg-7">
+          <div class="about-img">
+            <img src="imgg/img2.JPG" alt="about photo">
+          </div>
         </div>
+      </div>
     </div>
+  </section>
 
-    <!-- Portfolio Modal 4 -->
-    <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog modal-fullscreen">
-            <div class="modal-content">
-                <div class="close-modal" data-bs-dismiss="modal">
-                    <div class="lr">
-                        <div class="rl">
-                        </div>
-                    </div>
-                </div>
-                <div class="container">
-                    <div class="row justify-content-center">
-                        <div class="col-8">
-                            <div class="modal-body">
-                                <!-- Project Details Go Here -->
-                                <h2>Project Name</h2>
-                                <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                                <img class="w-100 img-centered" src="img/portfolio/golden-preview.png" alt="">
-                                <p>Start Bootstrap's Agency theme is based on Golden, a free PSD website template built
-                                    by <a href="https://www.behance.net/MathavanJaya">Mathavan Jaya</a>. Golden is a
-                                    modern and clean one page web template that was made exclusively for Best PSD
-                                    Freebies. This template has a great portfolio, timeline, and meet your team sections
-                                    that can be easily modified to fit your needs.</p>
-                                <p>You can download the PSD template in this portfolio sample item at <a
-                                        href="http://freebiesxpress.com/gallery/golden-free-one-page-web-template/">FreebiesXpress.com</a>.
-                                </p>
-                                <button type="button" class="btn btn-primary" data-bs-dismiss="modal"><i
-                                        class="fa fa-times"></i> Close Project</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+  <!-- C. Works -->
+  <section class="works" id="worksMain">
+    <div class="works-track">
+      <a class="work-slide" href="#"><img src="imgg/pic30.png" alt=""></a>
+      <a class="work-slide" href="#"><img src="imgg/pic29.png" alt=""></a>
+      <a class="work-slide" href="#"><img src="imgg/pic32.png" alt=""></a>
+      <a class="work-slide" href="#"><img src="imgg/pic27.png" alt=""></a>
+    </div>
+  </section>
+
+  <!-- Quote -->
+  <section class="quote" id="quote">
+    <div class="quote-wrap container">
+      <h2 class="quote-line quote-line--1" data-text="Courage is not the absence of fear,"></h2>
+      <h2 class="quote-line quote-line--2" data-text="but the triumph over it."></h2>
+    </div>
+  </section>
+
+  <!-- E. Contact -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="row g-4 align-items-start">
+
+        <div class="col-12 col-lg-6">
+          <h2 class="contact-title reveal-text mb-3">CONNECT ME</h2>
+          <div id="map" class="contact-map"></div>
         </div>
-    </div>
 
-    <!-- Portfolio Modal 5 -->
-    <div class="portfolio-modal modal fade" id="portfolioModal5" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog modal-fullscreen">
-            <div class="modal-content">
-                <div class="close-modal" data-bs-dismiss="modal">
-                    <div class="lr">
-                        <div class="rl">
-                        </div>
-                    </div>
-                </div>
-                <div class="container">
-                    <div class="row justify-content-center">
-                        <div class="col-8">
-                            <div class="modal-body">
-                                <!-- Project Details Go Here -->
-                                <h2>Project Name</h2>
-                                <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                                <img class="w-100 img-centered" src="img/portfolio/escape-preview.png" alt="">
-                                <p>Escape is a free PSD web template built by <a
-                                        href="https://www.behance.net/MathavanJaya">Mathavan Jaya</a>. Escape is a one
-                                    page web template that was designed with agencies in mind. This template is ideal
-                                    for those looking for a simple one page solution to describe your business and offer
-                                    your services.</p>
-                                <p>You can download the PSD template in this portfolio sample item at <a
-                                        href="http://freebiesxpress.com/gallery/escape-one-page-psd-web-template/">FreebiesXpress.com</a>.
-                                </p>
-                                <button type="button" class="btn btn-primary" data-bs-dismiss="modal"><i
-                                        class="fa fa-times"></i> Close Project</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div class="col-12 col-lg-6">
+          <!-- Vue mount：保留 #app（不要改） -->
+          <div id="app">
+            <form @submit.prevent="send" class="d-grid gap-3">
+              <input class="form-control" type="email" placeholder="Email" v-model="form.email" required>
+              <input class="form-control" type="text" placeholder="Phone" v-model="form.phone">
+              <input class="form-control" type="text" placeholder="Name" v-model="form.name">
+              <textarea class="form-control" rows="6" placeholder="Message" v-model="form.message"></textarea>
+              <button class="btn btn-lg btn-send" type="submit">Send</button>
+            </form>
+
+            <p v-if="msg" class="saveMsg mt-3">{{ msg }}</p>
+          </div>
         </div>
-    </div>
 
-    <!-- Portfolio Modal 6 -->
-    <div class="portfolio-modal modal fade" id="portfolioModal6" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog modal-fullscreen">
-            <div class="modal-content">
-                <div class="close-modal" data-bs-dismiss="modal">
-                    <div class="lr">
-                        <div class="rl">
-                        </div>
-                    </div>
-                </div>
-                <div class="container">
-                    <div class="row justify-content-center">
-                        <div class="col-8">
-                            <div class="modal-body">
-                                <!-- Project Details Go Here -->
-                                <h2>Project Name</h2>
-                                <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                                <img class="w-100 img-centered" src="img/portfolio/dreams-preview.png" alt="">
-                                <p>Dreams is a free PSD web template built by <a
-                                        href="https://www.behance.net/MathavanJaya">Mathavan Jaya</a>. Dreams is a
-                                    modern one page web template designed for almost any purpose. It’s a beautiful
-                                    template that’s designed with the Bootstrap framework in mind.</p>
-                                <p>You can download the PSD template in this portfolio sample item at <a
-                                        href="http://freebiesxpress.com/gallery/dreams-free-one-page-web-template/">FreebiesXpress.com</a>.
-                                </p>
-                                <button type="button" class="btn btn-primary" data-bs-dismiss="modal"><i
-                                        class="fa fa-times"></i> Close Project</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="d-flex flex-column flex-lg-row align-items-center justify-content-between gap-4 text-center text-lg-start">
+
+        <div class="footer-brand d-flex align-items-center gap-3 justify-content-center justify-content-lg-start w-100 w-lg-auto">
+          <div class="footer-logo" aria-hidden="true"></div>
+          <div class="footer-name">Tso Ling Yu</div>
         </div>
-    </div>
 
-    <!-- jQuery -->
-    <script src="vendor/jquery/jquery.min.js"></script>
- 
-    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-    <script src="js/bs5vue.js"></script> 
+        <div class="footer-right d-flex flex-column flex-lg-row align-items-center gap-3 gap-lg-4 w-100 w-lg-auto">
+          <nav class="footer-nav">
+            <a href="#home">Home</a>
+            <a href="#works">Works</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+          </nav>
+
+          <div class="footer-social d-flex gap-2 justify-content-center">
+            <a href="#" aria-label="Instagram" class="icon-btn">
+              <svg viewBox="0 0 24 24" class="icon" aria-hidden="true">
+                <path fill="currentColor" d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm10 2H7a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3zm-5 4a6 6 0 1 1 0 12a6 6 0 0 1 0-12zm0 2a4 4 0 1 0 0 8a4 4 0 0 0 0-8zm6.5-.6a1.1 1.1 0 1 1-2.2 0a1.1 1.1 0 0 1 2.2 0z"/>
+              </svg>
+            </a>
+
+            <a href="#" aria-label="X" class="icon-btn">
+              <svg viewBox="0 0 24 24" class="icon" aria-hidden="true">
+                <path fill="currentColor" d="M18.9 2H22l-6.8 7.8L23 22h-6.5l-5.1-6.4L5.7 22H2l7.3-8.4L1 2h6.6l4.6 5.8L18.9 2zm-1.1 18h1.7L7.5 3.9H5.7L17.8 20z"/>
+              </svg>
+            </a>
+
+            <a href="#" aria-label="YouTube" class="icon-btn">
+              <svg viewBox="0 0 24 24" class="icon" aria-hidden="true">
+                <path fill="currentColor" d="M21.6 7.2a3 3 0 0 0-2.1-2.1C17.7 4.6 12 4.6 12 4.6s-5.7 0-7.5.5A3 3 0 0 0 2.4 7.2A31 31 0 0 0 2 12a31 31 0 0 0 .4 4.8a3 3 0 0 0 2.1 2.1c1.8.5 7.5.5 7.5.5s5.7 0 7.5-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 22 12a31 31 0 0 0-.4-4.8zM10 15.5v-7l6 3.5-6 3.5z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </footer>
+
+  <!-- Leaflet -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+  <!-- Vue -->
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+  <!-- Bootstrap -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    gsap.registerPlugin(ScrollTrigger);
+
+    // ===== Leaflet =====
+    window.addEventListener("load", () => {
+      const map = L.map("map").setView([24.1503, 120.6839], 13);
+      L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", { maxZoom: 19 }).addTo(map);
+      L.marker([24.1503, 120.6839]).addTo(map).bindPopup("Ling Yu");
+      setTimeout(() => map.invalidateSize(), 200);
+    });
+
+    // ===== Quick wheel -> horizontal =====
+    const quickList = document.querySelector(".quick-list");
+
+    function isInViewEnough(el) {
+      const r = el.getBoundingClientRect();
+      const vh = window.innerHeight;
+      const visible = Math.min(r.bottom, vh) - Math.max(r.top, 0);
+      const ratio = visible / r.height;
+      return ratio >= 0.6;
+    }
+
+    window.addEventListener("wheel", (e) => {
+      if (!quickList) return;
+      if (!isInViewEnough(quickList)) return;
+
+      const SPEED = 9;
+      const maxScrollLeft = quickList.scrollWidth - quickList.clientWidth;
+      const atStart = quickList.scrollLeft <= 0;
+      const atEnd = quickList.scrollLeft >= maxScrollLeft - 1;
+
+      const goingRight = e.deltaY > 0;
+      const goingLeft = e.deltaY < 0;
+
+      const canScrollHorizontally =
+        (goingRight && !atEnd) || (goingLeft && !atStart);
+
+      if (canScrollHorizontally) {
+        e.preventDefault();
+        quickList.scrollLeft += e.deltaY * SPEED;
+      }
+    }, { passive: false });
+
+    // ===== About floating deco =====
+    const aboutSection = document.querySelector(".about");
+
+    function updateAboutDeco() {
+      if (!aboutSection) return;
+
+      const r = aboutSection.getBoundingClientRect();
+      const vh = window.innerHeight;
+
+      const start = vh;
+      const end = -r.height;
+      const t = (start - r.top) / (start - end);
+      const progress = Math.max(0, Math.min(1, t));
+
+      const y1 = (1 - progress) * 280;
+      const y2 = (1 - progress) * 220;
+
+      const i1 = aboutSection.querySelector(".about-deco__item--1");
+      const i2 = aboutSection.querySelector(".about-deco__item--2");
+
+      if (i1) i1.style.setProperty("--aboutY", `${y1}px`);
+      if (i2) i2.style.setProperty("--aboutY", `${y2}px`);
+    }
+
+    window.addEventListener("scroll", updateAboutDeco, { passive: true });
+    window.addEventListener("resize", updateAboutDeco);
+    updateAboutDeco();
+
+    // ===== Cover Parallax =====
+    const coverTL = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".cover",
+        start: "top top",
+        end: "+=90%",
+        scrub: true,
+        pin: true,
+        anticipatePin: 1
+      }
+    });
+
+    coverTL.to(".cover-tree--left",  { x: -350, y: 300 }, 0);
+    coverTL.to(".cover-tree--right", { x:  350, y: 300 }, 0);
+    coverTL.to(".cover-center",      { scale: 1.5 }, 0);
+    coverTL.to(".cover-bg",          { scale: 1.2 }, 0);
+    coverTL.to(".cover-title",       { opacity: 1 }, 0);
+
+    // ===== Reveal =====
+    gsap.utils.toArray(".reveal-text").forEach((el) => {
+      gsap.to(el, {
+        opacity: 1,
+        y: 0,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: el,
+          start: "top 70%",
+          end: "top 10%",
+          scrub: true
+        }
+      });
+    });
+
+    // ===== About photo bounce (desktop only) =====
+    (() => {
+      const mq = window.matchMedia("(min-width: 992px)");
+      const img = document.querySelector(".about-img img");
+      if (!img) return;
+
+      const setup = () => {
+        ScrollTrigger.getAll().forEach(st => {
+          if (st && st.vars && st.vars.id === "aboutBounce") st.kill();
+        });
+        gsap.killTweensOf(img);
+
+        if (!mq.matches) return;
+
+        gsap.set(img, { transformOrigin: "50% 50%" });
+
+        ScrollTrigger.create({
+          id: "aboutBounce",
+          trigger: ".about-img",
+          start: "top 70%",
+          once: true,
+          onEnter: () => {
+            gsap.fromTo(img,
+              { opacity: 0, y: 80, scale: 0.2 },
+              {
+                opacity: 1,
+                y: 0,
+                scale: 1,
+                duration: 0.35,
+                ease: "back.out(2.6)",
+                overwrite: true,
+                onComplete: () => {
+                  gsap.to(img, {
+                    keyframes: [
+                      { scale: 1.10, duration: 0.14, ease: "power2.out" },
+                      { scale: 0.97, duration: 0.12, ease: "power2.inOut" },
+                      { scale: 1.04, duration: 0.12, ease: "power2.out" },
+                      { scale: 1.00, duration: 0.10, ease: "power2.inOut" }
+                    ],
+                    overwrite: true
+                  });
+                }
+              }
+            );
+          }
+        });
+
+        ScrollTrigger.refresh();
+      };
+
+      window.addEventListener("load", setup);
+      window.addEventListener("resize", setup);
+    })();
+
+    // ===== Works: desktop horizontal pinned / mobile vertical =====
+    const worksSection = document.querySelector(".works");
+    const worksTrack = document.querySelector(".works-track");
+
+    function setupWorksScroll() {
+      ScrollTrigger.getAll().forEach(st => {
+        if (st && st.vars && st.vars.id === "worksPin") st.kill();
+      });
+      gsap.killTweensOf(worksTrack);
+
+      if (!worksSection || !worksTrack) return;
+
+      const isDesktop = window.matchMedia("(min-width: 768px)").matches;
+
+      if (!isDesktop) {
+        worksTrack.style.transform = "none";
+        worksSection.style.height = "auto";
+        return;
+      }
+
+      const maxX = () => -(worksTrack.scrollWidth - window.innerWidth);
+
+      gsap.to(worksTrack, {
+        x: maxX,
+        ease: "none",
+        scrollTrigger: {
+          id: "worksPin",
+          trigger: worksSection,
+          start: "top top",
+          end: () => "+=" + (worksTrack.scrollWidth - window.innerWidth),
+          scrub: true,
+          pin: true,
+          anticipatePin: 1,
+          invalidateOnRefresh: true
+        }
+      });
+
+      ScrollTrigger.refresh();
+    }
+
+    window.addEventListener("load", setupWorksScroll);
+    window.addEventListener("resize", setupWorksScroll);
+
+    // ===== Quote blur->clear =====
+    const quoteLines = document.querySelectorAll(".quote-line");
+    if (quoteLines.length) {
+      gsap.to(quoteLines, {
+        scrollTrigger: {
+          trigger: ".quote",
+          start: "top 80%",
+          end: "top 30%",
+          scrub: true
+        },
+        color: "rgba(255,255,255,0.92)",
+        filter: "blur(0px)",
+        y: 0
+      });
+    }
+
+    // ===== Quote typing (enter view then type) =====
+    (() => {
+      const sec = document.querySelector(".quote");
+      const l1 = document.querySelector(".quote-line--1");
+      const l2 = document.querySelector(".quote-line--2");
+      if (!sec || !l1 || !l2) return;
+
+      const t1 = l1.dataset.text || "";
+      const t2 = l2.dataset.text || "";
+
+      l1.textContent = "";
+      l2.textContent = "";
+
+      let typed = false;
+
+      const typeLine = (el, text, speed = 22) =>
+        new Promise((resolve) => {
+          let i = 0;
+          const timer = setInterval(() => {
+            i++;
+            el.textContent = text.slice(0, i);
+            if (i >= text.length) {
+              clearInterval(timer);
+              resolve();
+            }
+          }, speed);
+        });
+
+      const io = new IntersectionObserver(async (entries) => {
+        const entry = entries[0];
+        if (!entry || !entry.isIntersecting) return;
+        if (typed) return;
+
+        typed = true;
+        await typeLine(l1, t1, 22);
+        await typeLine(l2, t2, 22);
+        io.disconnect();
+      }, {
+        threshold: 0.45,
+        rootMargin: "0px 0px -10% 0px"
+      });
+
+      io.observe(sec);
+    })();
+  </script>
+
+  <script>
+    // ===== Vue Contact Form =====
+    const { createApp } = Vue;
+
+    createApp({
+      data() {
+        return {
+          form: { email: "", phone: "", name: "", message: "" },
+          msg: ""
+        };
+      },
+      methods: {
+        async send() {
+          this.msg = "Sending...";
+          try {
+            const r = await fetch("/contact", {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify(this.form)
+            });
+
+            const result = await r.json();
+            this.msg = result.message || "OK";
+
+            if (result.ok) {
+              this.form = { email: "", phone: "", name: "", message: "" };
+              setTimeout(() => (this.msg = ""), 2000);
+            }
+          } catch (err) {
+            this.msg = "Send failed: " + err;
+          }
+        }
+      }
+    }).mount("#app");
+  </script>
+
 </body>
-
 </html>
