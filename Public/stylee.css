@@ -7,13 +7,11 @@ body {
 }
 img { max-width: 100%; height: auto; display: block; }
 
-/* ===== Reveal ===== */
 .reveal-text{
   opacity: 0;
   transform: translateY(-30px);
 }
 
-/* ===== A. Cover ===== */
 .cover {
   height: 100vh;
   overflow: hidden;
@@ -43,7 +41,7 @@ img { max-width: 100%; height: auto; display: block; }
   width: min(92vw, 1200px);
   text-align: center;
   pointer-events: none;
-  opacity: 0; /* GSAP 淡入 */
+  opacity: 0;
 }
 .cover-title__text{
   font-family: "Poppins", sans-serif;
@@ -56,7 +54,6 @@ img { max-width: 100%; height: auto; display: block; }
   margin: 0;
 }
 
-/* trees */
 .cover-tree{
   position: absolute;
   bottom: -5vh;
@@ -69,7 +66,6 @@ img { max-width: 100%; height: auto; display: block; }
 .cover-tree--left{ left: 12vw; }
 .cover-tree--right{ right: 12vw; }
 
-/* center asset */
 .cover-center{
   position: absolute;
   left: 50%;
@@ -88,7 +84,6 @@ img { max-width: 100%; height: auto; display: block; }
   .cover-center{ width: 42vw; bottom: -12vh; }
 }
 
-/* ===== B. Quick ===== */
 .quick {
   padding: 90px 0 110px;
   background: #f3f0ea;
@@ -137,7 +132,6 @@ img { max-width: 100%; height: auto; display: block; }
   }
 }
 
-/* ===== D. About ===== */
 .about{
   background: #dfd8ca;
   padding: 110px 0;
@@ -208,7 +202,6 @@ img { max-width: 100%; height: auto; display: block; }
   .about-deco__item--2{ right: -6%; top: 16%; width: 120px; opacity: 0.75; }
 }
 
-/* ===== C. Works ===== */
 .works{
   position: relative;
   background: #111;
@@ -252,7 +245,6 @@ img { max-width: 100%; height: auto; display: block; }
   }
 }
 
-/* ===== Quote ===== */
 .quote{
   min-height: 110vh;
   display: grid;
@@ -298,7 +290,6 @@ img { max-width: 100%; height: auto; display: block; }
   color: rgba(255,255,255,0.10);
 }
 
-/* ===== Contact ===== */
 .contact{
   background: #f3f0ea;
   padding: 110px 0;
@@ -323,7 +314,6 @@ img { max-width: 100%; height: auto; display: block; }
   color: #111;
 }
 
-/* ===== Footer ===== */
 .site-footer{
   background: #beb59a;
   color: #fff;
@@ -361,7 +351,6 @@ img { max-width: 100%; height: auto; display: block; }
 }
 .icon{ width: 18px; height: 18px; }
 
-/* ===== Send button ===== */
 .btn-send{
   background: #beb59a;
   border-color: #beb59a;
