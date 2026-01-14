@@ -7,13 +7,11 @@ const app = express();
 app.use(cors({ origin: "*" }));
 app.use(express.json());
 
-// ✅ 這個一定要在 Render 環境變數設定 DATABASE_URL
 const pool = new Pool({
   connectionString: process.env.DATABASE_URL,
   ssl: process.env.DATABASE_URL ? { rejectUnauthorized: false } : false
 });
 
-// ✅ 啟動時自動建立資料表（不需要你手動跑 SQL）
 async function initDb() {
   await pool.query(`
     CREATE TABLE IF NOT EXISTS messages (
@@ -32,12 +30,11 @@ app.get("/health", async (req, res) => {
   try {
     await pool.query("SELECT 1");
     res.json({ ok: true, db: true });
-  } catch {
+  } catch (e) {
     res.status(500).json({ ok: false, db: false });
   }
 });
 
-// ✅ 真的寫入資料庫
 app.post("/api/messages", async (req, res) => {
   try {
     const { email, phone, name, message } = req.body || {};
@@ -57,7 +54,7 @@ app.post("/api/messages", async (req, res) => {
   }
 });
 
-// ✅ 方便你/老師驗證：看最近 20 筆
+// ✅ 你現在用瀏覽器看的就是這個
 app.get("/api/messages", async (req, res) => {
   try {
     const r = await pool.query(
