@@ -106,26 +106,17 @@
 
         <div class="col-12 col-lg-6">
           <h2 class="contact-title reveal-text mb-3">CONNECT ME</h2>
-          <a href="/form.html">資料庫表單（測試）</a>
-
           <div id="map" class="contact-map"></div>
         </div>
 
         <div class="col-12 col-lg-6">
           <div id="app">
-            <form name="contact-simple"
-                  method="POST"
-                  data-netlify="true"
-                  action="/thanks.html"
-                  class="d-grid gap-3">
-
-              <input class="form-control" type="email" name="email" placeholder="Email" required>
-              <input class="form-control" type="text"  name="phone" placeholder="Phone">
-              <input class="form-control" type="text"  name="name"  placeholder="Name" required>
-              <textarea class="form-control" rows="6" name="message" placeholder="Message" required></textarea>
-
+            <form @submit.prevent="send" class="d-grid gap-3">
+              <input class="form-control" type="email" placeholder="Email" v-model="form.email" required>
+              <input class="form-control" type="text" placeholder="Phone" v-model="form.phone">
+              <input class="form-control" type="text" placeholder="Name" v-model="form.name">
+              <textarea class="form-control" rows="6" placeholder="Message" v-model="form.message"></textarea>
               <button class="btn btn-lg btn-send" type="submit">Send</button>
-
             </form>
 
             <p v-if="msg" class="saveMsg mt-3">{{ msg }}</p>
