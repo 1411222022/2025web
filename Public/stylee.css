@@ -71,8 +71,8 @@ img { max-width: 100%; height: auto; display: block; }
   left: 50%;
   bottom: -25vh;
   transform: translateX(-55%) scale(0.3);
-  transform-origin: 50% 210%;
-  width: min(30vw, 270px);
+  transform-origin: 50% 220%;
+  width: min(30vw, 350px);
   height: auto;
   z-index: 4;
   pointer-events: none;
@@ -315,7 +315,7 @@ img { max-width: 100%; height: auto; display: block; }
 }
 
 .site-footer{
-  background: #c1b89a;
+  background: #b6a799;
   color: #fff;
   padding: 60px 0;
 }
@@ -352,16 +352,16 @@ img { max-width: 100%; height: auto; display: block; }
 .icon{ width: 18px; height: 18px; }
 
 .btn-send{
-  background: #c1b89a;
+  background: #b6a799;
   color: #ffffff;
 }
 .btn-send:hover{
-  background: #9a8f77;
+  background: #8b8b8b;
   color: #ffffff;
 }
 .btn-send:focus,
 .btn-send:active{
-  background: #d6c39d;
+  background: #b6a799;
   color: #ffffff;
   box-shadow: none;
 }
