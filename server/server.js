@@ -1,19 +1,69 @@
 import express from "express";
 import cors from "cors";
+import pkg from "pg";
+const { Pool } = pkg;
 
 const app = express();
 app.use(cors({ origin: "*" }));
 app.use(express.json());
 
-app.get("/health", (req, res) => res.json({ ok: true }));
+// ✅ 這個一定要在 Render 環境變數設定 DATABASE_URL
+const pool = new Pool({
+  connectionString: process.env.DATABASE_URL,
+  ssl: process.env.DATABASE_URL ? { rejectUnauthorized: false } : false
+});
 
+// ✅ 啟動時自動建立資料表（不需要你手動跑 SQL）
+async function initDb() {
+  await pool.query(`
+    CREATE TABLE IF NOT EXISTS messages (
+      id SERIAL PRIMARY KEY,
+      email TEXT NOT NULL,
+      phone TEXT NOT NULL DEFAULT '',
+      name TEXT NOT NULL DEFAULT '',
+      message TEXT NOT NULL DEFAULT '',
+      created_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
+    );
+  `);
+  console.log("DB ready");
+}
+
+app.get("/health", async (req, res) => {
+  try {
+    await pool.query("SELECT 1");
+    res.json({ ok: true, db: true });
+  } catch {
+    res.status(500).json({ ok: false, db: false });
+  }
+});
+
+// ✅ 真的寫入資料庫
 app.post("/api/messages", async (req, res) => {
   try {
     const { email, phone, name, message } = req.body || {};
     if (!email) return res.status(400).json({ ok: false, error: "email required" });
 
-    // 第3步才會真的寫DB；現在先回傳收到的資料
-    res.json({ ok: true, note: "received", data: { email, phone, name, message } });
+    const r = await pool.query(
+      `INSERT INTO messages (email, phone, name, message)
+       VALUES ($1, $2, $3, $4)
+       RETURNING id, created_at`,
+      [email, phone || "", name || "", message || ""]
+    );
+
+    res.json({ ok: true, id: r.rows[0].id, created_at: r.rows[0].created_at });
+  } catch (e) {
+    console.error(e);
+    res.status(500).json({ ok: false, error: "server error" });
+  }
+});
+
+// ✅ 方便你/老師驗證：看最近 20 筆
+app.get("/api/messages", async (req, res) => {
+  try {
+    const r = await pool.query(
+      "SELECT id, email, phone, name, message, created_at FROM messages ORDER BY id DESC LIMIT 20"
+    );
+    res.json({ ok: true, data: r.rows });
   } catch (e) {
     console.error(e);
     res.status(500).json({ ok: false, error: "server error" });
@@ -21,4 +71,10 @@ app.post("/api/messages", async (req, res) => {
 });
 
 const port = process.env.PORT || 3000;
-app.listen(port, () => console.log("API listening on", port));
+
+initDb()
+  .then(() => app.listen(port, () => console.log("API listening on", port)))
+  .catch((e) => {
+    console.error("DB init failed:", e);
+    process.exit(1);
+  });
