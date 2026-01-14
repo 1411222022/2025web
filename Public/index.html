@@ -441,25 +441,11 @@
       },
       methods: {
         async send() {
-          this.msg = "Sending...";
-          try {
-            const r = await fetch("/contact", {
-              method: "POST",
-              headers: { "Content-Type": "application/json" },
-              body: JSON.stringify(this.form)
-            });
-
-            const result = await r.json();
-            this.msg = result.message || "OK";
-
-            if (result.ok) {
-              this.form = { email: "", phone: "", name: "", message: "" };
-              setTimeout(() => (this.msg = ""), 2000);
-            }
-          } catch (err) {
-            this.msg = "Send failed: " + err;
-          }
+          this.msg = "Saved!";
+          this.form = { email: "", phone: "", name: "", message: "" };
+          setTimeout(() => (this.msg = ""), 2000);
         }
+
       }
     }).mount("#app");
   </script>

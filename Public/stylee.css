@@ -315,7 +315,7 @@ img { max-width: 100%; height: auto; display: block; }
 }
 
 .site-footer{
-  background: #beb59a;
+  background: #c1b89a;
   color: #fff;
   padding: 60px 0;
 }
@@ -352,19 +352,16 @@ img { max-width: 100%; height: auto; display: block; }
 .icon{ width: 18px; height: 18px; }
 
 .btn-send{
-  background: #beb59a;
-  border-color: #beb59a;
+  background: #c1b89a;
   color: #ffffff;
 }
 .btn-send:hover{
-  background: #a99f83;
-  border-color: #a99f83;
+  background: #9a8f77;
   color: #ffffff;
 }
 .btn-send:focus,
 .btn-send:active{
-  background: #a99f83;
-  border-color: #a99f83;
+  background: #d6c39d;
   color: #ffffff;
   box-shadow: none;
 }
