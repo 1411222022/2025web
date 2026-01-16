@@ -54,7 +54,7 @@ app.post("/api/messages", async (req, res) => {
   }
 });
 
-// ✅ 你現在用瀏覽器看的就是這個
+
 app.get("/api/messages", async (req, res) => {
   try {
     const r = await pool.query(
