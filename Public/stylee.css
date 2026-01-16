@@ -315,7 +315,7 @@ img { max-width: 100%; height: auto; display: block; }
 }
 
 .site-footer{
-  background: #c1b89a;
+  background: #000000;
   color: #fff;
   padding: 60px 0;
 }
@@ -352,16 +352,16 @@ img { max-width: 100%; height: auto; display: block; }
 .icon{ width: 18px; height: 18px; }
 
 .btn-send{
-  background: #c1b89a;
+  background: #000000;
   color: #ffffff;
 }
 .btn-send:hover{
-  background: #9a8f77;
+  background: #000000;
   color: #ffffff;
 }
 .btn-send:focus,
 .btn-send:active{
-  background: #d6c39d;
+  background: #000000;
   color: #ffffff;
   box-shadow: none;
 }

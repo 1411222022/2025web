@@ -51,7 +51,7 @@
 
           <div class="quick-caption text-center mt-4">
             <div class="quick-title reveal-text">Showcase</div>
-            <div class="quick-sub reveal-text">Scroll to skim projects fast</div>
+            <div class="quick-sub reveal-text">下面還有</div>
           </div>
 
         </div>
@@ -243,6 +243,8 @@
     window.addEventListener("resize", updateAboutDeco);
     updateAboutDeco();
 
+
+
     const coverTL = gsap.timeline({
       scrollTrigger: {
         trigger: ".cover",
@@ -259,6 +261,9 @@
     coverTL.to(".cover-center",      { scale: 1.5 }, 0);
     coverTL.to(".cover-bg",          { scale: 1.2 }, 0);
     coverTL.to(".cover-title",       { opacity: 1 }, 0);
+
+
+
 
     gsap.utils.toArray(".reveal-text").forEach((el) => {
       gsap.to(el, {

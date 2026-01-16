@@ -5,22 +5,24 @@ const DB = require("nedb-promises");
 const app = express();
 const PORT = 8090;
 
-// DB file
+
 const contactDb = DB.create(path.join(__dirname, "Contact.db"));
 
-// static files: /Public
+
 app.use(express.static(path.join(__dirname, "Public")));
 
-// body parser
+
+
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-// home
+
+
 app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "Public", "indexx.html"));
 });
 
-// save contact (Vue fetch -> /contact)
+
 app.post("/contact", async (req, res) => {
   try {
     const data = {
@@ -38,7 +40,7 @@ app.post("/contact", async (req, res) => {
   }
 });
 
-// list contacts (check)
+
 app.get("/contacts", async (req, res) => {
   try {
     const list = await contactDb.find({}).sort({ createdAt: -1 });
