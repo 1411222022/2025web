@@ -71,8 +71,8 @@ img { max-width: 100%; height: auto; display: block; }
   left: 50%;
   bottom: -25vh;
   transform: translateX(-55%) scale(0.3);
-  transform-origin: 50% 220%;
-  width: min(30vw, 350px);
+  transform-origin: 50% 200%;
+  width: min(30vw, 280px);
   height: auto;
   z-index: 4;
   pointer-events: none;
