@@ -2,24 +2,28 @@
 <html lang="zh-Hant">
 <head>
   <meta charset="UTF-8" />
+  <!--指定螢幕寬度為裝置寬度，畫面載入初始縮放比例 100%-->
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Portfolio</title>
 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-
+  <!--使用leaflet會做出像google map那樣可以拖動縮放的地圖-->
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
 
+  <!--導入google fonts的字體，讓網頁可以使用Poppins跟DM Serif Display這兩種字型-->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700;800;900&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
 
+  <!--用gsap控制動畫-->
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
-
+  
+  <!--css-->
   <link rel="stylesheet" href="stylee.css" />
 </head>
 
 <body>
-
+  <!--這一段是首頁，section用來把網頁分成一段一段的，div區塊用來將網頁內容分組、劃分區域，class和id取名，alt是如果圖片沒有出現會留下的文字說明-->
   <section class="cover" id="home">
     <div class="cover-wrap">
       <img class="cover-bg" src="imgg/cover-bg4.jpg" alt="cover background">
@@ -35,6 +39,7 @@
     </div>
   </section>
 
+  <!--這一段是快速作品瀏覽，當滑鼠滾動時，作品會往左滑動，container置中且左右留白，row一個橫向的空間，讓裡面的col能夠在其中排成一行，col-12滿版-->
   <section class="quick" id="works">
     <div class="container">
       <div class="row">
@@ -59,6 +64,8 @@
     </div>
   </section>
 
+
+  <!--這一段是about me和簡單的自我介紹-->
   <section class="about" id="about">
     <div class="about-deco">
       <img class="about-deco__item about-deco__item--1" src="imgg/pic33.png" alt="">
@@ -84,6 +91,8 @@
     </div>
   </section>
 
+  
+  <!--這一段是about me和簡單的自我介紹-->
   <section class="works" id="worksMain">
     <div class="works-track">
       <a class="work-slide" href="#"><img src="imgg/pic30.png" alt=""></a>
